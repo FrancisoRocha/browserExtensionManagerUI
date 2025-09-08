@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <title>Browser extensions manager UI</title>
-  <link rel="stylesheet" href="./CSS/normalize.css">
-  <link rel="stylesheet" href="./CSS/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <title>Browser extensions manager UI</title>
+    <link rel="stylesheet" href="./CSS/normalize.css">
+    <link rel="stylesheet" href="./CSS/styles.css">
 </head>
 <body class="light-theme">  
 
+    <!-- Header -->
     <header class="header light-theme">
         <img src="./assets/images/logo.svg" alt="Browser extensions manager logo">
-        <button class="button-theme">
+        <button class="button-theme light-theme">
             <img src="./assets/images/icon-moon.svg" alt="Icon Theme">
         </button>
     </header>
+
+    <!-- CONTAINER -->
+    <main class="main-container">
+        <!-- FILTERS -->
+        <section class="main__filters">
+            <h3 class="main__title">Extensions List</h3>
+            <!-- OPTIONS -->
+            <div class="main-filter__options">
+                <button class="filter__option filter__option--active" data-filter="all">All</button>
+                <button class="filter__option light-theme" data-filter="enabled">Active</button>
+                <button class="filter__option light-theme" data-filter="disabled">Inactive</button> </div>
+        </section>
+    </main>
 
 </body>
 </html>
