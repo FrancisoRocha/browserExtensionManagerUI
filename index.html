@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
     <title>Browser extensions manager UI</title>
     <link rel="stylesheet" href="./CSS/normalize.css">
     <link rel="stylesheet" href="./CSS/styles.css">
 </head>
-<body class="light-theme">  
+
+<body class="light-theme">
 
     <!-- Header -->
     <header class="header light-theme">
-        <img src="./assets/images/logo.svg" alt="Browser extensions manager logo">
-        <button class="button-theme light-theme">
-            <img src="./assets/images/icon-moon.svg" alt="Icon Theme">
+        <img src="./assets/images/logo.svg" alt="Browser extensions manager logo" class="logo">
+        <button type="button" class="button-theme light-theme">
+            <img src="./assets/images/icon-moon.svg" alt="Icon Theme" class="icon__theme">
         </button>
     </header>
 
@@ -27,9 +30,38 @@
             <div class="main-filter__options">
                 <button class="filter__option filter__option--active" data-filter="all">All</button>
                 <button class="filter__option light-theme" data-filter="enabled">Active</button>
-                <button class="filter__option light-theme" data-filter="disabled">Inactive</button> </div>
+                <button class="filter__option light-theme" data-filter="disabled">Inactive</button>
+            </div>
         </section>
     </main>
+    <!-- EXTENSIONES -->
+    <div class="extensions">
+        <!-- CARDS -->
+        <div class="extensions__cards">
+            <!-- CARD 1 -->
+            <div class="card light-theme">
+                <div class="info__card">
+                    <img src="./assets/images/logo-console-plus.svg" alt="Logo Console Plus" class="icon">
+                    <div class="info__text">
+                        <p class="title light-theme">DevLens</p>
+                        <p class="text light-theme">Quickly inspect page layouts and visualize element boundaries.</p>
+                    </div>
+                </div>
+                <!-- BUTTONS -->
+                <div class="buttons__card">
+                    <button class="button__remove light-theme">Remove</button>
+                    <!-- SWITCH -->
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                        <span class="knob"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./JS/index.js" type="module"></script>
 
 </body>
 </html>
