@@ -1,53 +1,51 @@
-Extensions List
+ // Crear DIV de las Cards
+    const cards = document.createElement('div');
+    cards.classList.add('card');
 
-All
-Active
-Inactive
-<!-- If you plan to use the JSON file to populate the data dynamically, you can delete the content below -->
-DevLens
-Quickly inspect page layouts and visualize element boundaries.
-Remove
+    //DIV de la info de las cards
+    const infoCard = document.createElement('div');
+    infoCard.classList.add('info__card');
 
-StyleSpy
-Instantly analyze and copy CSS from any webpage element.
-Remove
+    //Imagen de la card
+    const imgCard = document.createElement('img');
+    imgCard.classList.add('icon');
+    // ForEach de la logo
+    imgCard.src = 
 
-SpeedBoost
-Optimizes browser resource usage to accelerate page loading.
-Remove
+    //* DIV info cards
+    const infoCards = document.createElement('div');
+    infoCards.classList.add('info__text');
 
-JSONWizard
-Formats, validates, and prettifies JSON responses in-browser.
-Remove
+    // Titulo Card
+    const titleCard = document.createElement('p');
+    titleCard.classList.add('title');
+    // ForEach del titulo
+    titleCard.textContent = 
 
-TabMaster Pro
-Organizes browser tabs into groups and sessions.
-Remove
+    //Descripcion Card
+    const textCard = document.createElement('p');
+    textCard.classList.add('text');
+    //ForEach de la descipcion
+    textCard.textContent = 
 
-ViewportBuddy
-Simulates various screen resolutions directly within the browser.
-Remove
+    //DIV BOTONES DE LA CARD
+    const buttonsCard = document.createElement('div');
+    buttonsCard.classList.add('buttons__card');
 
-Markup Notes
-Enables annotation and notes directly onto webpages for collaborative debugging.
-Remove
+    //Boton de Remove
+    const buttonRemove = document.createElement('button');
+    buttonRemove.classList.add('button__remove');
+    buttonRemove.textContent = 'Remove';
 
-GridGuides
-Overlay customizable grids and alignment guides on any webpage.
-Remove
+    //Switch de Active / Inactive
+    const switchLabel = document.createElement('label');
+    switchLabel.classList.add('switch');
 
-Palette Picker
-Instantly extracts color palettes from any webpage.
-Remove
+    const switchInput = document.createElement('input');
+    switchInput.type = 'checkbox';
 
-LinkChecker
-Scans and highlights broken links on any page.
-Remove
+    const switchSlider = document.createElement('span');
+    switchSlider.classList.add('slider');
 
-DOM Snapshot
-Capture and export DOM structures quickly.
-Remove
-
-ConsolePlus
-Enhanced developer console with advanced filtering and logging.
-Remove
+    const switchKnob = document.createElement('span');
+    switchKnob.classList.add('knob');
