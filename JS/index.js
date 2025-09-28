@@ -1,6 +1,8 @@
 import { renderCards } from "./renderCards.js";
 import { toggleTheme } from "./theme.js";
 
-toggleTheme();
-renderCards();
+document.addEventListener('DOMContentLoaded', () => {
+    toggleTheme();
+    renderCards();
+})
 

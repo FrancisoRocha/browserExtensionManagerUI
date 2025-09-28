@@ -1,3 +1,5 @@
+import { applyDarkThemeToCards } from "./theme.js";
+
 //TODO: Render cards - extensions
 const cardsContainer = document.querySelector('.extensions__cards');
 // Traer datos del DATA Json
@@ -24,7 +26,7 @@ export async function renderCards() {
         card.classList.add('card');
 
         // Crear Cards
-        card.innerHTML = 
+        card.innerHTML =
             `
             <div class="info__card">
                 <img src="${element.logo}" alt="${element.name}" class="icon">
@@ -38,12 +40,14 @@ export async function renderCards() {
                 <button class="button__remove light-theme">Remove</button>
                 <!-- SWITCH -->
                 <label class="switch">
-                    <input type="checkbox">
+                    <input type="checkbox" ${element.isActive ? 'checked' : ''}>
                     <span class="slider"></span>
                     <span class="knob"></span>
                 </label>
             </div>
             `;
             cardsContainer.append(card);
+            //Aplicar tema oscuro al las cards
+            applyDarkThemeToCards();
         });
 }
