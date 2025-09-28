@@ -38,15 +38,15 @@ export async function renderCards() {
         // Crear Cards
         card.innerHTML =
             `
-            <div class="info__card">
+            <section class="info__card">
                 <img src="${element.logo}" alt="${element.name}" class="icon">
                 <div class="info__text">
                     <p class="title light-theme">${element.name}</p>
                     <p class="text light-theme">${element.description}</p>
                 </div>
-            </div>
+            </section>
             <!-- BUTTONS -->
-            <div class="buttons__card">
+            <section class="buttons__card">
                 <button class="button__remove light-theme">Remove</button>
                 <!-- SWITCH -->
                 <label class="switch">
@@ -54,12 +54,28 @@ export async function renderCards() {
                     <span class="slider"></span>
                     <span class="knob"></span>
                 </label>
-            </div>
+                <span class="visually-hidden">Enable notifications</span>
+            </section>
             `;
             cardsContainer.append(card);
             //Aplicar tema oscuro al las cards
             applyDarkThemeToCards();
             switchEvent();
+            removerCard();
             filtersCards();
         });
+}
+
+// Funcion para El boton de Eliminar
+function removerCard(){
+
+    const btnRemove = document.querySelectorAll('.button__remove');
+
+    btnRemove.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const card = btn.closest('.card');
+            card.remove();
+        })
+    })
+
 }
