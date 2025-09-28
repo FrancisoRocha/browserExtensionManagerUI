@@ -1,3 +1,5 @@
+import { filtersCards } from "./buttonsFilter.js";
+import { switchEvent } from "./switchs.js";
 import { applyDarkThemeToCards } from "./theme.js";
 
 //TODO: Render cards - extensions
@@ -20,10 +22,18 @@ export async function renderCards() {
     const data = await getData();
     console.log(data)
 
+    const stored = JSON.parse(localStorage.getItem('extensions')) || {};
+
     data.forEach(element => {
+
+        if(stored[element.name] !== undefined){
+            element.isActive = stored[element.name];
+        }
 
         const card = document.createElement('div');
         card.classList.add('card');
+        if(element.isActive) card.classList.add('active');
+            else card.classList.add('inactive');
 
         // Crear Cards
         card.innerHTML =
@@ -40,7 +50,7 @@ export async function renderCards() {
                 <button class="button__remove light-theme">Remove</button>
                 <!-- SWITCH -->
                 <label class="switch">
-                    <input type="checkbox" ${element.isActive ? 'checked' : ''}>
+                    <input type="checkbox" class="switch__input" ${element.isActive ? 'checked' : ''}>
                     <span class="slider"></span>
                     <span class="knob"></span>
                 </label>
@@ -49,5 +59,7 @@ export async function renderCards() {
             cardsContainer.append(card);
             //Aplicar tema oscuro al las cards
             applyDarkThemeToCards();
+            switchEvent();
+            filtersCards();
         });
 }
